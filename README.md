@@ -71,18 +71,20 @@ To quickly trigger the Garderobe script, you can set up terminal aliases. This a
 
 Open your terminal and edit your shell configuration file (e.g., ~/.bashrc for Bash or ~/.zshrc for Zsh):
 
-bash
-Copy code
+```bash
 nano ~/.bashrc
 # or
 nano ~/.zshrc
+```
+
 Add the following aliases to the file:
 
-bash
-Copy code
+```bash
 alias tidy_desktop='python3 /path/to/garderobe.py 1'
 alias tidy_downloads='python3 /path/to/garderobe.py 2'
 alias tidy_current='python3 /path/to/garderobe.py 3'
+```
+
 Make sure to replace /path/to/garderobe.py with the actual path to your garderobe.py script.
 
 Save the file and reload your shell configuration:
