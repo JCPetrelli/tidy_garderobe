@@ -19,7 +19,7 @@ Garderobe is a simple Python script designed to help you organize files in your 
 1. Clone this repository or download the script file.
 
    ```bash
-   git clone https://github.com/yourusername/garderobe.git
+   git clone https://github.com/JCPetrelli/tidy_garderobe.git
    ```
 
 2. Navigate to the directory containing the script.
@@ -33,7 +33,7 @@ Garderobe is a simple Python script designed to help you organize files in your 
 1. Run the script.
 
    ```bash
-   python garderobe.py
+   python3 garderobe.py
    ```
 
 2. Follow the on-screen menu to choose an option:
@@ -66,17 +66,44 @@ Garderobe is a simple Python script designed to help you organize files in your 
 
 If you choose to tidy your Desktop, all files on your Desktop will be moved to corresponding folders in `~/Documents/Garderobe`. For instance, all `.txt` files will be moved to `~/Documents/Garderobe/TXT`.
 
+## Using Terminal Aliases
+To quickly trigger the Garderobe script, you can set up terminal aliases. This allows you to run the script with a simple command like tidy_desktop, tidy_downloads, or tidy_current.
+
+Open your terminal and edit your shell configuration file (e.g., ~/.bashrc for Bash or ~/.zshrc for Zsh):
+
+bash
+Copy code
+nano ~/.bashrc
+# or
+nano ~/.zshrc
+Add the following aliases to the file:
+
+bash
+Copy code
+alias tidy_desktop='python3 /path/to/garderobe.py 1'
+alias tidy_downloads='python3 /path/to/garderobe.py 2'
+alias tidy_current='python3 /path/to/garderobe.py 3'
+Make sure to replace /path/to/garderobe.py with the actual path to your garderobe.py script.
+
+Save the file and reload your shell configuration:
+
+```bash
+source ~/.bashrc
+# or
+source ~/.zshrc
+```
+
+Now, you can use the aliases to quickly run the script:
+
+```bash
+tidy_desktop    # To tidy your Desktop
+tidy_downloads  # To tidy your Downloads
+tidy_current    # To tidy your current directory
+```
+
 ## Contributing
 
 If you have suggestions for improvements or find any bugs, please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
-
-## Contact
-
-If you have any questions or feedback, feel free to reach out to [your email] or open an issue on GitHub.
 
 ---
 
