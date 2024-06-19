@@ -4,6 +4,7 @@ import sys
 import termios
 import tty
 from collections import defaultdict
+import argparse
 
 # Function to scan and move files
 def scan_and_move_files(source_folder):
@@ -58,8 +59,15 @@ def display_menu():
     print("Press the corresponding number key to choose an option.")
 
 def main():
-    display_menu()
-    choice = getch()
+    parser = argparse.ArgumentParser(description="Tidy specific directories.")
+    parser.add_argument('choice', nargs='?', help="Choice of directory to tidy: 1 for Desktop, 2 for Downloads, 3 for current directory.")
+    args = parser.parse_args()
+
+    if args.choice:
+        choice = args.choice
+    else:
+        display_menu()
+        choice = getch()
 
     if choice == '1':
         desktop_folder = os.path.join(os.path.expanduser('~'), 'Desktop')
